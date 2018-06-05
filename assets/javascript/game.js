@@ -30,33 +30,99 @@ var lossesTallied = function() {
     var randNum = Math.floor(Math.random() * 120) + 1;
 
     // Append the randNum results to the randNum div
-    $("#randNum").append(randNum);
+    $("#randNum").text(randNum);
 
-    // function to create the random number (1-12) when clicking the crystal
+//Function to reset the game
+function reset(){
+    
+}
+
+//Setting up a function to reset the game and give an alert if the player wins, add the current score, and reset the game
+function win(){
+    alert("You win smarty pants");
+    wins++;
+    $("#wins").append(wins)
+    reset();
+}
+//Setting up a function to reset the game and give an alert if the player losses
+function lose(){
+    alert("You lose dumb dumb!");
+    losses++;
+    $("#losses").append(losses)
+    reset();
+}
+
+
+
+    // .on('click to add a listen event for a click) - Then function to create the random number (1-12) when clicking the crystal
     $("#redButton").on("click", function () {
         for (i = 0; i < 0; i++) {
-            var randNum = Math.floor(Math.random() * 120) + 1;
+            var randNum1 = Math.floor(Math.random() * 120) + 1;
+    //Adding the random number from the crystal click to the current score from the play (sum of all clicks)
+            userNumAgg = userNumAgg + randNum1;
+    //console.log to check if it works
+            console.log("playerScoreTotal="+userNumAgg);
+    //adding the current score to it's appropriate div
+            $("#randNumAgg").text(userNumAgg);
+    //if statement setting rules for wins and loss, then resetting the game based on the functions I set up earlier for win and lose
+                if (userNumAgg == randNum){
+                win();
+                }
+                else if (userNumAgg > randNum){
+                    lose();
+                }
         };
 
     $("#blueButton").on("click", function () {
         for (i = 0; i < 0; i++) {
             var randNum2 = Math.floor(Math.random() * 120) + 1;
+            userNumAgg = userNumAgg + randNum2;
+            console.log("playerScoreTotal="+userNumAgg);
+            $("#randNumAgg").text(userNumAgg);
+                if (userNumAgg == randNum){
+                win();
+                }
 
+                else if(userNumAgg > randNum){
+                lose();
+                }
+            };
+        });
+
+            
     $("#yellowButton").on("click", function () {
         for (i = 0; i < 0; i++) {
             var randNum3 = Math.floor(Math.random() * 120) + 1;
+            userNumAgg = userNumAgg + randNum3;
+            console.log("playerScoreTotal="+userNumAgg);
+            $("#randNumAgg").text(userNumAgg);
+                if (userNumAgg == randNum){
+                win();
+                }
+
+                else if(userNumAgg > randNum){
+                lose();
+                }
         };
+    });
 
     $("#greenButton").on("click", function () {
         for (i = 0; i < 0; i++) {
             var randNum4 = Math.floor(Math.random() * 120) + 1;
-        };
+            userNumAgg = userNumAgg + randNum4;
+            console.log("playerScoreTotal="+userNumAgg);
+            $("#randNumAgg").text(userNumAgg);
+                if (userNumAgg == randNum){
+                win();
+                }
 
-//Resetting the game when a win or a loss occurs
-if (randNum > userNumAgg) {
-    if()
-    document.querySelector('#win').innerHTML = "Wins: " + wins;
-    alert("You won Dummy!");
+                else if(userNumAgg > randNum){
+                lose();
+                };
+            };
+        });
+
+
 }
 
 reset()
