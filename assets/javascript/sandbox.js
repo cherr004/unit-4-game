@@ -2,23 +2,11 @@
 $(document).ready(function () {
 
     //Variables we will use
-    var randNum = 0;
-    var userNum = 0;
-    var userNumAgg= 0;
-    var playerScore = 0;
+    var randNumComp = 0;
+    var randNumCrystal = 0;
+    var totalScore= 0;
     var losses = "";
     var wins = "";
-
-//functions that puts the amount of wins/losses tallied into the div for win/losses after the text that was created in the html
-//this is where connect to HTML to fill in visual data for user 
-
-var winsTallied = function() {
-    document.querySelector("#wins").innerHTML = "Wins:" + wins;
-};
-
-var lossesTallied = function() {
- document.querySelector("#losses").innerhtml = "Losses:" + losses;
-};
 
     //function called when we reset everything after win or lose
     var reset = function () {
@@ -70,7 +58,7 @@ var randNumCrystal = Math.floor(Math.random() * 120) + 1;
 
     // if else statement stating that if the total score after the button click is = to the generated ranom number you win, if it's greater than the random number, you lose
 
-    if (userNumAgg == randNum){
+    if (userNumAgg == randNumComp){
         win();
         }
 
@@ -78,6 +66,15 @@ var randNumCrystal = Math.floor(Math.random() * 120) + 1;
         lose();
         }
     });
+
+        //if statement setting rules for wins and loss, then resetting the game based on the functions I set up earlier for win and lose
+        function winLoss(){
+            if (userNumAgg == randNum){
+                win();
+            }
+            else if (userNumAgg > randNum){
+                lose();
+            }
 
         //Blue button function
     $("#blueButton").on("click", function (){
@@ -92,47 +89,30 @@ var randNumCrystal = Math.floor(Math.random() * 120) + 1;
                 lose();
                 }
             });
-            
+
+    //Yellow button functionality code
     $("#yellowButton").on("click", function () {
-       score = scoreHolder + randNumCrystal;
+       totalScore = scoreHolder + randNumCrystal;
             console.log("playerScoreTotal="+userNumAgg);
             $("#randNumAgg").text(score);
-                if (userNumAgg == randNum){
+                if (totalScore == randNum){
                 win();
                 }
 
                 else if(userNumAgg > randNum){
                 lose();
                 }
-        };
     });
 
+    //Green Button functionality code
     $("#greenButton").on("click", function () {
-        for (i = 0; i < 0; i++) {
-            var randNum4 = Math.floor(Math.random() * 120) + 1;
-            userNumAgg = userNumAgg + randNum4;
+            userNumAgg = userNumAgg + randNumCrystal;
             console.log("playerScoreTotal="+userNumAgg);
             $("#randNumAgg").text(userNumAgg);
-                if (userNumAgg == randNum){
-                win();
-                }
-
-                else if(userNumAgg > randNum){
-                lose();
-                };
-            };
-        });
+            winLoss();
+    });
 
 
-}
-
-    //if statement setting rules for wins and loss, then resetting the game based on the functions I set up earlier for win and lose
-    if (userNumAgg == randNum){
-        win();
-        }
-        else if (userNumAgg > randNum){
-            lose();
-        }
 };
 reset()
 
@@ -143,3 +123,14 @@ else if (userNumAgg = randNum) {
     reset();
 }
     });
+
+    //functions that puts the amount of wins/losses tallied into the div for win/losses after the text that was created in the html
+//this is where connect to HTML to fill in visual data for user 
+
+var winsTallied = function() {
+    document.querySelector("#wins").innerHTML = "Wins:" + wins;
+};
+
+var lossesTallied = function() {
+ document.querySelector("#losses").innerhtml = "Losses:" + losses;
+};
