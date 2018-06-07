@@ -8,13 +8,6 @@ $(document).ready(function () {
     var losses = "";
     var wins = "";
 
-    //function called when we reset everything after win or lose
-    var reset = function () {
-        randNumComp = "";
-        randNumCrystal = "";
-        totalScore = "";
-    };
-
     // function to create the random number (19-120) that will appear in the randNum div
     var randNum = Math.floor(Math.random() * 120) + 1;
 
@@ -30,6 +23,13 @@ $(document).ready(function () {
 
     var lossesTallied = function () {
         document.querySelector("#losses").innerhtml = "Losses:" + losses;
+    };
+
+    //function called when we reset everything after win or lose
+    function reset() {
+        randNumComp = "";
+        randNumCrystal = "";
+        totalScore = "";
     };
 
     // Append the randNum results to the randNum div
