@@ -58,12 +58,16 @@ function lose(){
     $("#redButton").on("click", function () {
         for (i = 0; i < 0; i++) {
             var randNum1 = Math.floor(Math.random() * 120) + 1;
+
     //Adding the random number from the crystal click to the current score from the play (sum of all clicks)
             userNumAgg = userNumAgg + randNum1;
+            
     //console.log to check if it works
             console.log("playerScoreTotal="+userNumAgg);
+
     //adding the current score to it's appropriate div
             $("#randNumAgg").text(userNumAgg);
+
     //if statement setting rules for wins and loss, then resetting the game based on the functions I set up earlier for win and lose
                 if (userNumAgg == randNum){
                 win();
