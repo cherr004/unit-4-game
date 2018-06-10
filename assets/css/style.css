@@ -1,0 +1,61 @@
+.container {
+    background-image: "https://wallpapertag.com/wallpaper/full/9/7/d/224153-game-backgrounds-2600x1080-computer.jpg";
+}
+
+#header {
+    background-color: orange;
+    color: whitesmoke;
+    font-size: 300%;
+    font-weight: bold;
+    padding-bottom: 1%;
+}
+
+#pColumn {
+    background-color: tan;
+    color: green;
+}
+
+#randNum {
+    background-color: green;
+    color: black;
+}
+
+#winLoss {
+    background-color: aquamarine;
+    color: black;
+}
+
+#redButton{
+    background-color: gray;
+    float: left;
+}
+
+#blueButton{
+    background-color: gray;
+    float: left;
+}
+
+#yellowButton{
+    background-color: gray;
+    float: left;
+}
+
+#greenButton{
+    background-color: gray;
+    float: left;
+}
+
+#scoreHeader{
+    background-color: teal;
+    color: black;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+}
+
+#randNumAgg{
+    background-color: teal;
+    color: black;
+    font-size: 140%;
+    padding-bottom: 8%;
+
+}
