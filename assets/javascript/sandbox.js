@@ -21,7 +21,7 @@ $(document).ready(function () {
         randNumCrystalBlue = "";
         randNumCrystalYellow = "";
         randNumCrystalGreen = "";
-        totalScore = 0;
+        totalScore = "";
     };
 
     //Setting up a function to reset the game and give an alert if the player wins, add the current score, and reset the game
